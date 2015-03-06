@@ -1,6 +1,31 @@
 <footer>
+
+  <div class="authorContainer">
+  	<!-- need author photo -->
+  	<?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?>
+  	<!-- need author bio (short) -->
+  	<?php echo get_the_author_meta('description'); ?>
+   </div>
+   <div class="socialIcons">
+   	<!-- need social icons (plugin?) -->
+   </div>
+	<div class="recentposts">
+		<!-- need recent posts, probably a loop -->
+		<?php 
+		$footerPosts = new WP_query(
+			array(
+				'posts_per_page' => 4,
+				)
+		); ?>
+		<?php if ($footerPosts -> have_posts() ) : ?>
+			<?php while ($footerPosts->have_posts()) : $footerPosts->the_post(); ?>
+				<?php echo get_the_post_thumbnail( $post->ID); ?>
+			<?php endwhile ?>
+			<?php wp_reset_postdata(); ?>
+		<?php endif; ?>
+	</div>
   <div class="container">
-    <p>&copy; HackerYou <?php echo date('Y'); ?></p>
+    <p>&copy; Jenny <?php echo date('Y'); ?></p>
   </div>
 </footer>
 

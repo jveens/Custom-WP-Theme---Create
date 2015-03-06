@@ -163,10 +163,18 @@ img.alignright {
   clear: both; }
 
 /* =============================================================================
+                   Grid System
+   ========================================================================== */
+/* =============================================================================
                    Default Styling
    ========================================================================== */
+html {
+  width: 100%;
+  font-size: 62.5%; }
+
 body {
-  color: #333; }
+  color: #333;
+  height: 100%; }
 
 .container {
   max-width: 1200px;
@@ -182,11 +190,23 @@ body {
 
 /* links */
 a {
-  color: #BA209B;
-  text-decoration: none; }
+  color: #000;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif; }
 
 a:hover {
   color: #D424B1; }
+
+h1, h2, h3 {
+  font-family: 'Pacifico', sans-serif;
+  font-weight: 400; }
+
+h1 {
+  padding: 50px; }
+
+h1 a {
+  font-size: 6rem;
+  font-family: 'Pacifico', sans-serif; }
 
 /* paragraphs */
 p {
@@ -229,6 +249,13 @@ pre {
   border: 1px solid #ccc; }
 
 /* =============================================================================
+                   Header
+   ========================================================================== */
+header {
+  position: relative;
+  text-align: center; }
+
+/* =============================================================================
                    Sidebar
    ========================================================================== */
 .sidebar {
@@ -243,27 +270,39 @@ pre {
   list-style: none; }
 
 /* =============================================================================
+                   Navigation
+   ========================================================================== */
+.menu {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444; }
+  .menu li {
+    display: inline;
+    margin-right: 10px; }
+    .menu li a {
+      color: #333;
+      padding: 20px 30px;
+      color: #444;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      display: inline-block; }
+
+/* =============================================================================
                    Footer
    ========================================================================== */
 footer {
-  clear: both; }
-
-/* =============================================================================
-                   Navigation
-   ========================================================================== */
-ul.menu {
-  margin: 0;
-  padding: 0; }
-
-ul.menu li {
-  display: inline;
-  margin-right: 10px; }
-
-ul.menu li a {
-  color: #333;
-  padding: 10px;
-  background: #333;
-  color: white; }
+  clear: both;
+  /* end .authorContainer */ }
+  footer .authorContainer {
+    width: 50%; }
+    footer .authorContainer img {
+      border-radius: 50%; }
+    footer .authorContainer p {
+      width: 80%;
+      float: right; }
+  footer .container {
+    text-align: center; }
 
 /* =============================================================================
                    Comment Styling

@@ -5,7 +5,7 @@ var gulp = require('gulp'),
 	browserSync = require('browser-sync'),
 	reload = browserSync.reload;
 
-gulp.task('default', ['browserSync', 'styles', 'jshint', 'watch']);
+gulp.task('default', ['browserSync', 'watch']);
 
 gulp.task('styles', function(){
 	gulp.src('style/*.scss')
@@ -34,5 +34,5 @@ gulp.task('browserSync', function(){
 gulp.task('watch', function(){
 	gulp.watch('scripts/**/*.js', ['jshint']);
 	gulp.watch('style/**/*.scss', ['styles']);
-	gulp.watch('**/*.html', reload);
+	gulp.watch('**/*.php', reload);
 });
