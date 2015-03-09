@@ -1,19 +1,9 @@
 <footer >
 	<div class="innerFooter clearfix">
   		<div class="authorContainer">
-
-  		<?php 
-  		$lastpost = new WP_query(
-  			array(
-  			'posts_per_page' => 1,
-  			) 
-  		); ?>
-
-		<?php if ($lastpost->have_posts() ) :  ?>
-			<?php while ($lastpost->have_posts() ) : $lastpost->the_post(); ?>
   	<!-- need author photo -->
   	
-  		<?php echo get_avatar( get_the_author_meta( 'ID' ), 125 ); ?>
+  		<?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?>
   	
   	<!-- need author bio (short) -->
   	<p>
@@ -23,10 +13,6 @@
 
 	  	<a href="#">Learn More..</a>
   	</p>
-
-  			<?php endwhile ?>
-  			<?php wp_reset_postdata(); ?>
-  		<?php endif; ?>
    <div class="socialIcons">
    	<!-- need social icons (plugin?) -->
 
@@ -39,7 +25,7 @@
 	   	?>
 	   	</div>
    	</div>
-
+   	
    </div>
    </div>
 	<div class="recentposts">
@@ -47,7 +33,7 @@
 		<?php 
 		$footerPosts = new WP_query(
 			array(
-				'posts_per_page' => 6,
+				'posts_per_page' => 4,
 				)
 		); ?>
 		<?php if ($footerPosts -> have_posts() ) : ?>
