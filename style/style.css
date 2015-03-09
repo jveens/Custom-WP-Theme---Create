@@ -192,10 +192,11 @@ body {
 a {
   color: #000;
   text-decoration: none;
-  font-family: 'Raleway', sans-serif; }
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.1rem; }
 
 a:hover {
-  color: #D424B1; }
+  color: #CD5C5C; }
 
 h1, h2, h3 {
   font-family: 'Pacifico', sans-serif;
@@ -210,7 +211,8 @@ h1 a {
 
 /* paragraphs */
 p {
-  line-height: 1.5; }
+  line-height: 1.7;
+  font-size: 1.1rem; }
 
 /*blockquotes*/
 blockquote {
@@ -248,6 +250,9 @@ pre {
   border-radius: 4px;
   border: 1px solid #ccc; }
 
+img {
+  border-radius: 3px; }
+
 /* =============================================================================
                    Header
    ========================================================================== */
@@ -259,8 +264,11 @@ header {
                    Sidebar
    ========================================================================== */
 .sidebar {
-  width: 30%;
-  float: left; }
+  width: 27%;
+  float: left;
+  margin: 2% 0 0 3%; }
+  .sidebar p {
+    font-size: 1.2rem; }
 
 .sidebar ul {
   margin: 0;
@@ -268,6 +276,16 @@ header {
 
 .sidebar ul li {
   list-style: none; }
+  .sidebar ul li h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5rem;
+    text-transform: uppercase; }
+
+#simple-social-icons-3 {
+  padding-top: 15px; }
+
+#text-2 {
+  width: 80%; }
 
 /* =============================================================================
                    Navigation
@@ -289,6 +307,79 @@ header {
       display: inline-block; }
 
 /* =============================================================================
+                    FRONT PAGE
+ ========================================================================== */
+.frontPage {
+  width: 70%;
+  float: left; }
+  .frontPage .featured {
+    width: 80%;
+    margin: 5% 10%;
+    position: relative;
+    text-align: left;
+    -webkit-transition: all 0.7s;
+            transition: all 0.7s; }
+    .frontPage .featured p {
+      position: absolute;
+      top: 30%;
+      left: 3%;
+      font-size: 3rem;
+      color: transparent;
+      background: transparent;
+      padding: 12px 10px 10px;
+      line-height: 1.3;
+      border-radius: 3px;
+      font-family: 'Raleway', sans-serif;
+      -webkit-transition: all 0.3s;
+              transition: all 0.3s; }
+    .frontPage .featured:hover p {
+      color: #ededed;
+      background: rgba(68, 68, 68, 0.7);
+      cursor: pointer; }
+    .frontPage .featured:hover img {
+      opacity: 0.6;
+      border: 3px solid #444;
+      cursor: pointer; }
+    .frontPage .featured .featuredLink {
+      display: block;
+      width: 100%;
+      height: 100%;
+      font-weight: 100; }
+    .frontPage .featured img {
+      width: 100%;
+      height: auto;
+      border: 3px solid transparent;
+      -webkit-transition: all 0.4s;
+              transition: all 0.4s; }
+  .frontPage .otherPosts hr {
+    width: 90%;
+    text-align: right; }
+  .frontPage .otherPosts h3 {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    font-size: 1.5rem; }
+  .frontPage .otherPosts .imgContainer {
+    width: 45%;
+    margin: 5%;
+    float: left; }
+    .frontPage .otherPosts .imgContainer img {
+      width: 100%;
+      height: auto; }
+  .frontPage .textContainer {
+    width: 35%;
+    margin: 5% 10% 0 0;
+    float: right;
+    text-align: justify; }
+    .frontPage .textContainer h3 {
+      text-align: left;
+      text-transform: uppercase;
+      font-size: 1.7rem; }
+    .frontPage .textContainer a {
+      display: block;
+      font-size: 1.1rem;
+      padding: 15px 5px 5px 0; }
+
+/* =============================================================================
                    Footer
    ========================================================================== */
 footer {
@@ -298,18 +389,14 @@ footer {
   footer .innerFooter {
     background: #ededed;
     padding: 10px;
-    margin: 0 50px;
+    margin: 0 40px;
     border-radius: 5px;
     position: relative; }
   footer .authorContainer {
     width: 60%;
     float: left;
     position: relative;
-    text-align: center;
-    -webkit-transform: translateY(10%);
-        -ms-transform: translateY(10%);
-            transform: translateY(10%);
-    top: 50%; }
+    text-align: center; }
     footer .authorContainer img {
       border-radius: 50%;
       padding: 15px;

@@ -33,11 +33,17 @@ function theme_setup() {
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
 	) );
 
+
+
 }
 endif;
 
 add_action( 'after_setup_theme', 'theme_setup' );
 
+function custom_excerpt_length( $length ) {
+	return 45;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 /* Add all our JavaScript files here.
 We'll let WordPress add them to our templates automatically instead

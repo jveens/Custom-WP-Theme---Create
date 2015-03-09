@@ -8,6 +8,7 @@ Author URI: http://jennyveens.com
 */
 
 $bgAccent : #ededed;
+$Raleway : 'Raleway', sans-serif;
 
 
 /* =============================================================================
@@ -42,36 +43,7 @@ img.alignright    { padding-left: 5px; }
                    Grid System
    ========================================================================== */
 
-/////////////////
-//   Deadset   //
-// Adapted from Semantic.gs // for SCSS: http://sass-lang.com/
-/////////////////
 
-// Defaults which you can freely override
-$column-width: 60px;
-$gutter-width: 20px;
-$columns: 12;
-
-// Utility function — you should never need to modify this
-@function gridsystem-width($columns:$columns) {
-  @return ($column-width * $columns) + ($gutter-width * $columns);
-}
-
-// Set $total-width to 100% for a fluid layout
-$total-width: 100%;
-
-@mixin clearfix() {
-  *zoom: 1;
-  &:before,
-  &:after {
-    display: table;
-    content:'';
-    line-height: 0;
-  }
-  &:after {
-    clear: both;
-  }
-}
 
 
 
@@ -110,10 +82,11 @@ a {
   color: #000;
   text-decoration: none;
   font-family: 'Raleway', sans-serif;
+  font-size: 1.1rem;
 }
 
 a:hover {
-  color: #D424B1;
+  color: #CD5C5C;
 }
 
 h1, 
@@ -133,7 +106,8 @@ h1 a {
 
 /* paragraphs */
 p {
-  line-height: 1.5;
+  line-height: 1.7;
+  font-size: 1.1rem;
 }
 
 /*blockquotes*/
@@ -178,6 +152,10 @@ pre {
   border-radius: 4px;
   border:1px solid #ccc;
 }
+
+img {
+  border-radius: 3px;
+}
 /* =============================================================================
                    Header
    ========================================================================== */
@@ -191,8 +169,14 @@ header {
                    Sidebar
    ========================================================================== */
 .sidebar {
-  width:30%;
+  width:27%;
   float:left;
+  margin: 2% 0 0 3%;
+
+  p {
+    font-size: 1.2rem;
+  }
+
 }
   .sidebar ul {
     margin:0;
@@ -200,7 +184,20 @@ header {
   }
     .sidebar ul li {
       list-style: none;
+
+      h3 {
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.5rem;
+        text-transform: uppercase; 
+      }
     }
+
+#simple-social-icons-3 {
+  padding-top: 15px;
+}
+#text-2 {
+  width: 80%;
+}
 
 /* =============================================================================
                    Navigation
@@ -227,6 +224,110 @@ header {
     }
   }
 
+  /* =============================================================================
+                    FRONT PAGE
+ ========================================================================== */
+
+ .frontPage {
+  width: 70%;
+  float: left;
+
+  .featured {
+    width: 80%;
+    margin: 5% 10%;
+    position: relative;
+    text-align: left;
+    transition: all 0.7s;
+    
+    p {
+      position: absolute;
+      top: 30%; 
+      left: 3%;
+      font-size: 3rem;
+      color: transparent;
+      background: transparent;
+      padding: 12px 10px 10px;
+      line-height: 1.3;
+      border-radius: 3px;
+      font-family: 'Raleway', sans-serif;
+      transition: all 0.3s;
+
+    }
+
+    &:hover p{
+        color: $bgAccent;
+        background: rgba(68,68,68,0.7);
+        cursor: pointer;
+      }
+
+    &:hover img {
+      opacity: 0.6;
+      border: 3px solid #444;
+      cursor: pointer;
+    }
+
+    .featuredLink {
+      display: block;
+      width: 100%;
+      height: 100%;
+      font-weight: 100;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border: 3px solid transparent;
+      transition: all 0.4s;
+    }
+
+  }
+
+  .otherPosts {
+
+    hr {
+      width: 90%;
+      text-align: right;
+    }
+
+    h3 {
+      font-family: $Raleway;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    .imgContainer {
+      width: 45%;
+      margin: 5%;
+      float: left;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .textContainer {
+    width: 35%;
+    margin: 5% 10% 0 0;
+    float: right;
+    text-align: justify;
+
+    h3 {
+      text-align: left;
+      text-transform: uppercase;
+      font-size: 1.7rem;
+    }
+
+    a {
+      display: block;
+      font-size: 1.1rem;
+      padding: 15px 5px 5px 0;
+    }
+
+  }
+}
+
+
 
 /* =============================================================================
                    Footer
@@ -239,7 +340,7 @@ footer {
   .innerFooter {
     background: $bgAccent;
     padding: 10px;
-    margin: 0 50px;
+    margin: 0 40px;
     border-radius: 5px;
     position: relative;
   }
@@ -249,8 +350,8 @@ footer {
     float: left;
     position: relative;
     text-align: center;
-    transform: translateY(10%);
-    top: 50%;
+    // transform: translateY(0%);
+    // top: 100%;
 
     img {
       border-radius: 50%;
